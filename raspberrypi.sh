@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 # Script for Monitoring a Raspberry Pi with Zabbix
 # 2013 Bernhard Linz
 # Bernhard@znil.de / http://znil.net
-# modifiziert 2018 Jan Schoefer
+# modified 2018 Jan Schoefer
 #
 case "$1" in
         boardversion)
@@ -38,20 +38,20 @@ case "$1" in
                 vcgencmd get_mem gpu | tr -d "gpu=" | tr -d "M"
                 ;;
         sdcardtotalsize)
-                # Size of SD-Card in KByte
-                df -P -B1 | grep rootfs | tr -s " " " " | cut -d " " -f 2
+                # Size of SD-Card in Byte
+                df -P -B1 | grep /dev/root | tr -s " " " " | cut -d " " -f 2
                 ;;
         sdcardused)
-                # Used Diskspace in KByte
-                df -P -B1| grep rootfs | tr -s " " " " | cut -d " " -f 3
+                # Used Diskspace in Byte
+                df -P -B1| grep /dev/root | tr -s " " " " | cut -d " " -f 3
                 ;;
         sdcardusedpercent)
                 # Used Diskspace in Percent
-                df -P -B1| grep rootfs | tr -s " " " " | cut -d " " -f 5
+                df -P -B1| grep /dev/root | tr -s " " " " | cut -d " " -f 5
                 ;;
         sdcardfree)
-                # free Diskspace in KByte
-                df -P -B1| grep rootfs | tr -s " " " " | cut -d " " -f 4
+                # free Diskspace in Byte
+                df -P -B1| grep /dev/root | tr -s " " " " | cut -d " " -f 4
                 ;;
         temperature)
                 # Temperature in 1/1000 centigrade
