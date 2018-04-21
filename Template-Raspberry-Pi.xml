@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-04-21T12:33:32Z</date>
+    <date>2018-04-21T12:41:11Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -749,6 +749,24 @@
             <screens/>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template Raspberry Pi:raspberrypi.sh[temperature].last()}&gt;79</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Thermal throttle</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description>Raspberry Pi will throttle at ca. 80 °C.</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
     <graphs>
         <graph>
             <name>RAM</name>
