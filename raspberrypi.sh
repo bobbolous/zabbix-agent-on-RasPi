@@ -69,7 +69,12 @@ case "$1" in
                 ;;
         temperature)
                 # Temperature in degree celsius
-				/opt/vc/bin/vcgencmd measure_temp | tr -d "temp='C"
+                /opt/vc/bin/vcgencmd measure_temp | tr -d "temp='C"
+                ;;
+        throttlestate)
+                # throttle state, for more information: 
+		        # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=147781&start=50#p972790
+                /opt/vc/bin/vcgencmd get_throttled | sed s/"throttled=0x"//g
                 ;;
         *)
                 echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
