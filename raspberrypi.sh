@@ -23,6 +23,46 @@ case "$1" in
                 # ARM Clock Speed in Hz
                 /opt/vc/bin/vcgencmd measure_clock arm | sed s/"frequency(45)="//g
                 ;;
+        h264clock)
+                # H264 Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock h264 | sed s/"frequency(28)="//g
+                ;;
+        ispclock)
+                # ISP Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock isp | sed s/"frequency(42)="//g
+                ;;
+        v3dclock)
+                # v3d Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock v3d | sed s/"frequency(43)="//g
+                ;;
+        uartclock)
+                # uart Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock uart | sed s/"frequency(22)="//g
+                ;;
+        pwmclock)
+                # pwm Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock pwm | sed s/"frequency(25)="//g
+                ;;
+        emmcclock)
+                # emmc Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock emmc | sed s/"frequency(47)="//g
+                ;;
+        pixelclock)
+                # pixel Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock pixel | sed s/"frequency(29)="//g
+                ;;
+        vecclock)
+                # vec Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock vec | sed s/"frequency(10)="//g
+                ;;
+        hdmiclock)
+                # hdmi Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock hdmi | sed s/"frequency(9)="//g
+                ;;
+        dpiclock)
+                # dpi Clock Speed in Hz
+                /opt/vc/bin/vcgencmd measure_clock dpi | sed s/"frequency(4)="//g
+                ;;
         cpumem)
                 # CPU Memory in MByte
                 vcgencmd get_mem arm | tr -d "arm=M"
@@ -55,17 +95,21 @@ case "$1" in
                 # Used Diskspace in Byte
                 df -P -B1| grep /dev/root | tr -s " " | cut -d " " -f 3
                 ;;
-        sdramcvoltage)
+        corevoltage)
                 # sdram_c Voltage in Volt
                 /opt/vc/bin/vcgencmd measure_volts | tr -d "volt=V"
                 ;;
+        sdramcvoltage)
+                # sdram_c Voltage in Volt
+                /opt/vc/bin/vcgencmd measure_volts sdram_c| tr -d "volt=V"
+                ;;
         sdramivoltage)
                 # sdram_i Voltage in Volt
-                /opt/vc/bin/vcgencmd measure_volts | tr -d "volt=V"
+                /opt/vc/bin/vcgencmd measure_volts sdram_i| tr -d "volt=V"
                 ;;
         sdrampvoltage)
                 # sdram_p Voltage in Volt
-                /opt/vc/bin/vcgencmd measure_volts | tr -d "volt=V"
+                /opt/vc/bin/vcgencmd measure_volts sdram_p| tr -d "volt=V"
                 ;;
         temperature)
                 # Temperature in degree celsius
@@ -77,6 +121,6 @@ case "$1" in
                 /opt/vc/bin/vcgencmd get_throttled | sed s/"throttled=0x"//g
                 ;;
         *)
-                echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
+                echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|h264clock|ispclock|v3dclock|uartclock|pwmclock|emmcclock|pixelclock|vecclock|hdmiclock|dpiclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
 esac
 exit 0
