@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.2</version>
+    <date>2019-08-13T11:00:03Z</date>
+    <value_maps>
+        <value_map>
+            <name>RPI board version</name>
+            <mappings>
+                <mapping>
+                    <value>9000c1</value>
+                    <newvalue>Zero W rev 1.1 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>9020e0</value>
+                    <newvalue>3A+ rev 1.0 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>900021</value>
+                    <newvalue>A+ rev 1.1 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>900032</value>
+                    <newvalue>B+ rev 1.2 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>900061</value>
+                    <newvalue>CM rev 1.1 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>900092</value>
+                    <newvalue>Zero rev 1.2 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>900093</value>
+                    <newvalue>Zero rev 1.3 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>920092</value>
+                    <newvalue>Zero rev 1.2 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>920093</value>
+                    <newvalue>Zero rev 1.3 512MB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a01040</value>
+                    <newvalue>2B rev 1.0 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a01041</value>
+                    <newvalue>2B rev 1.1 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a020a0</value>
+                    <newvalue>CM3 rev 1.0 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a020d3</value>
+                    <newvalue>3B+ rev 1.3 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a02082</value>
+                    <newvalue>3B rev 1.2 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a02100</value>
+                    <newvalue>CM3+ rev 1.0 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a03111</value>
+                    <newvalue>4B rev 1.1 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a220a0</value>
+                    <newvalue>CM3 rev 1.0 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a21041</value>
+                    <newvalue>2B rev 1.1 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a22042</value>
+                    <newvalue>2B (BCM2837) rev 1.2 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a22082</value>
+                    <newvalue>3B rev 1.2 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a22083</value>
+                    <newvalue>3B rev 1.3 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a32082</value>
+                    <newvalue>3B rev 1.2 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>a52082</value>
+                    <newvalue>3B rev 1.2 1GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>b03111</value>
+                    <newvalue>4B rev 1.1 2GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>c03111</value>
+                    <newvalue>4B rev 1.1 4GB</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>

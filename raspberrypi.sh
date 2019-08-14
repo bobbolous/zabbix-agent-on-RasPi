@@ -118,7 +118,7 @@ case "$1" in
         throttlestate)
                 # throttle state, for more information: 
 		        # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=147781&start=50#p972790
-                /opt/vc/bin/vcgencmd get_throttled | sed s/"throttled=0x"//g
+                /opt/vc/bin/vcgencmd get_throttled | sed s/"throttled="//g | perl -e '$number = hex(<STDIN>); printf "%.32b\n", $number'
                 ;;
         *)
                 echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|h264clock|ispclock|v3dclock|uartclock|pwmclock|emmcclock|pixelclock|vecclock|hdmiclock|dpiclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
