@@ -2,6 +2,7 @@
 # Script for Monitoring a Raspberry Pi with Zabbix
 # original from Bernhard Linz 2013 (Bernhard@znil.de / http://znil.net)
 # modified 2018 Jan Schoefer
+# modified 2020 Piotr Goczal
 case "$1" in
         boardrevision)
                 # get the Hardware Revision
@@ -21,7 +22,7 @@ case "$1" in
                 ;;
         cpuclock)
                 # ARM Clock Speed in Hz
-                /opt/vc/bin/vcgencmd measure_clock arm | sed s/"frequency(45)="//g
+                /opt/vc/bin/vcgencmd measure_clock arm | cut -d "=" -f 2
                 ;;
         h264clock)
                 # H264 Clock Speed in Hz
@@ -29,11 +30,11 @@ case "$1" in
                 ;;
         ispclock)
                 # ISP Clock Speed in Hz
-                /opt/vc/bin/vcgencmd measure_clock isp | sed s/"frequency(42)="//g
+                /opt/vc/bin/vcgencmd measure_clock isp | cut -d "=" -f 2
                 ;;
         v3dclock)
                 # v3d Clock Speed in Hz
-                /opt/vc/bin/vcgencmd measure_clock v3d | sed s/"frequency(43)="//g
+                /opt/vc/bin/vcgencmd measure_clock v3d | cut -d "=" -f 2
                 ;;
         uartclock)
                 # uart Clock Speed in Hz
@@ -45,7 +46,7 @@ case "$1" in
                 ;;
         emmcclock)
                 # emmc Clock Speed in Hz
-                /opt/vc/bin/vcgencmd measure_clock emmc | sed s/"frequency(47)="//g
+                /opt/vc/bin/vcgencmd measure_clock emmc | cut -d "=" -f 2
                 ;;
         pixelclock)
                 # pixel Clock Speed in Hz
@@ -57,7 +58,7 @@ case "$1" in
                 ;;
         hdmiclock)
                 # hdmi Clock Speed in Hz
-                /opt/vc/bin/vcgencmd measure_clock hdmi | sed s/"frequency(9)="//g
+                /opt/vc/bin/vcgencmd measure_clock hdmi | cut -d "=" -f 2
                 ;;
         dpiclock)
                 # dpi Clock Speed in Hz
